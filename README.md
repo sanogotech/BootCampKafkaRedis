@@ -38,4 +38,8 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 ## Creating a Producer 
 
 
+## Run
+gradlew bootRun
+or  java -jar  /targert/*jar
+
 
