@@ -37,6 +37,8 @@ It will create a Kafka topic named ‘bootcamp-topic’. The –partition argume
 ## Testing, Connecting and Monitoring our Kafka using Kafka Tools 
 Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools that can downloaded from http://www.kafkatool.com/download.html 
 
+![Client GUI KafkaTool](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/Kafkatool.jpg)
+
 ## Creating a Producer 
 
 
