@@ -1,10 +1,13 @@
 package com.mitrais.persistence.service;
 
 import org.springframework.dao.DataIntegrityViolationException;
+import com.mitrais.persistence.entity.MUser;
 
 public interface CommonDAO {
 
 	public Object save(Object o) throws DataIntegrityViolationException;
+	
+	public Object saveMUser(MUser o) throws DataIntegrityViolationException;
 	
 	public Object update(Object o);
 	

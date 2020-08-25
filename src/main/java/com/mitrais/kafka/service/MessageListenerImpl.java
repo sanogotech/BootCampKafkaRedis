@@ -17,8 +17,16 @@ public class MessageListenerImpl implements MessageListener{
 	@Override
 	@KafkaListener(topics="${kafka.my.topic}")
 	public void listen(String jsonStr) throws Exception {
-		MUser user = JsonUtil.parseJson(jsonStr, MUser.class);
-		dao.save(user);
+		MUser kafkaUser = JsonUtil.parseJson(jsonStr, MUser.class);
+		/*
+		MUser user = new  MUser();
+		user.setId(kafkaUser.getId());
+		user.setUserId(kafkaUser.getUserId());
+		user.setEmail(kafkaUser.getEmail());
+		user.setFullName(kafkaUser.getFullName());
+		user.setPassword(kafkaUser.getPassword());
+		*/
+		dao.saveMUser(kafkaUser);
 		System.out.println("======================> Consumed Message: "+jsonStr);
 	}
 

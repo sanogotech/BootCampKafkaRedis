@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.annotation.Transactional;
+import com.mitrais.persistence.entity.MUser;
 
 public class CommonDAOImpl implements CommonDAO{
 
@@ -14,7 +15,21 @@ public class CommonDAOImpl implements CommonDAO{
 	@Override
 	@Transactional
 	public Object save(Object o) throws DataIntegrityViolationException{
+
 		em.persist(o);
+		
+		return o;
+	}
+	
+	
+	
+	
+	@Override
+	@Transactional
+	public Object saveMUser(MUser o) throws DataIntegrityViolationException{
+	
+		em.merge(o);
+		
 		return o;
 	}
 
