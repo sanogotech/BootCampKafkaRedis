@@ -42,6 +42,20 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 ## Creating a Producer 
 
 
+```json
+{ 
+  "id": 1,
+  
+   "userId":"souleybas",
+ 
+    "email":"mysouley@oracle.com",
+	
+    "fullName":"Souleymane SANOGO",
+
+  "password":"basci255"
+ }
+ ```
+
 ## Run
 - gradle build    
 - java -jar  /targert/*jar
