@@ -43,7 +43,8 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 
 
 ## Run
-gradlew bootRun
-or  java -jar  /targert/*jar
+- gradle build    
+- java -jar  /targert/*jar
 
+- gradlew bootRun
 
