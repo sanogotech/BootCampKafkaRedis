@@ -1,5 +1,7 @@
 # BootCampKafkaRedis
 
+![Architecture API Spring Boot Kafka](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/DemoSpringBootAPIProducerKafkaConsumerSpringDB.jpg)
+
 ## Starting Zookeeper 
 ./bin/zookeeper-server-start.sh config/zookeeper.properties &
 
