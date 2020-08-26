@@ -1,4 +1,4 @@
-# BootCampKafkaRedis
+# TP 1: BootCampKafkaRedis
 
 ![Architecture API Spring Boot Kafka](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/DemoSpringBootAPIProducerKafkaConsumerSpringDB.jpg)
 
@@ -62,7 +62,17 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 
 - gradlew bootRun
 
-## Add Python  Hello Topic /Producer /Consumer
+##  Stop  Kafka
+you just need to stop Kafka and Zookeepter properly.
+
+You just have run these two commands in order
+```
+bin/kafka-server-stop.sh
+
+bin/zookeeper-server-stop.sh
+```
+
+# TP 2/ Add Python  Hello Topic /Producer /Consumer
 
 ```
 pip install kafka-python
@@ -74,21 +84,95 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 -
 
 ### Python Kafka Consumer  /myhellotopic
 
+https://kafka-python.readthedocs.io/en/master/usage.html
+
 ```
+
 from kafka import KafkaConsumer
-consumer = KafkaConsumer('myhellotopic')
+
+
+# To consume latest messages and auto-commit offsets
+#consumer = KafkaConsumer('bootcamp-topic',   group_id='my-group',bootstrap_servers=['localhost:9093'])
+
+consumer = KafkaConsumer('bootcamp-topic',bootstrap_servers=['127.0.0.1:9093'])
+
 for message in consumer:
-    print (message)
+    # message value and key are raw bytes -- decode if necessary!
+    # e.g., for unicode: `message.value.decode('utf-8')`
+    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
+                                          message.offset, message.key,
+                                          message.value))
+
 ```
 
 ### Kafka Producer  /myhellotopic
 ```
 from kafka import KafkaProducer
-producer = KafkaProducer(bootstrap_servers='localhost:9092')
-producer.send('sample', b'Hello, World!')
-producer.send('sample', key=b'message-two', value=b'This is Kafka-Python')
+from kafka.errors import KafkaError
+
+producer = KafkaProducer(bootstrap_servers=['127.0.0.1:9093'])
+
+
+def on_send_success(record_metadata):
+    print(record_metadata.topic)
+    print(record_metadata.partition)
+    print(record_metadata.offset)
+
+def on_send_error(excp):
+    log.error('I am an errback', exc_info=excp)
+    # handle exception
+
+# produce asynchronously with callbacks
+producer.send('bootcamp-topic', b'Akwaba Python').add_callback(on_send_success).add_errback(on_send_error)
+
+# block until all async messages are sent
+producer.flush()
+
+# configure multiple retries
+#producer = KafkaProducer(retries=5)
+
+
+print('Send Message to Kafka')
 ```
 ### Result 
 ```
 Hello, World! in Kafka using Python
 ```
+
+# TP3 / Change  Data Capture  with  https://debezium.io/releases/
+- https://kafka.apache.org/documentation.html#connect
+- https://debezium.io/releases/
+
+~/kafka/bin/connect-standalone.sh ~/sconf/connect-standalone.properties ~/conf/kafka-postgres.properties
+
+* connector-standalone.properties
+```
+offset.storage.file.filename=/tmp/connect.offsets
+
+plugin.path=/home/ubuntu/software/connect-plugins
+```
+Add one more property to indicate where the Debezium Postgres connector can be located. Note that this folder should contain all the extracted files form Debezium zip file.
+
+
+* connector-postgres.properties
+```
+name=postgres-connector
+connector.class=io.debezium.connector.postgresql.PostgresConnector
+database.hostname=xxx.xxx.xxx.xxx
+database.port=5432
+database.user=my_db_user
+database.password=my_db_password
+database.dbname=my_db_name
+database.server.name=db_logical_name
+plugin.name=pgoutput
+table.whitelist=my_schema.table_name
+errors.log.enable=true
+errors.logs.include.messages=true
+```
+* Some of the notable properties are
+
+connector.class – Defines which connector to be used.
+plugin.name – In With PostgreSQL 9.5 onwards you can leverage pgoutput instead of decoderbuf. If you are using older version of PostgreSQL, please refer to the Debezium documentation.
+table.whitelist – Defines the list of tables (comma separated) which should be observed for data changes.
+
+
