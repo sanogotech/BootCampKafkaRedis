@@ -62,6 +62,16 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 
 - gradlew bootRun
 
+##  Stop  Kafka
+you just need to stop Kafka and Zookeepter properly.
+
+You just have run these two commands in order
+```
+bin/kafka-server-stop.sh
+
+bin/zookeeper-server-stop.sh
+```
+
 # TP 2/ Add Python  Hello Topic /Producer /Consumer
 
 ```
