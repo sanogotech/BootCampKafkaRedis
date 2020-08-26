@@ -99,6 +99,15 @@ Hello, World! in Kafka using Python
 
 ~/kafka/bin/connect-standalone.sh ~/sconf/connect-standalone.properties ~/conf/kafka-postgres.properties
 
+* connector-standalone.properties
+```
+offset.storage.file.filename=/tmp/connect.offsets
+
+plugin.path=/home/ubuntu/software/connect-plugins
+```
+Add one more property to indicate where the Debezium Postgres connector can be located. Note that this folder should contain all the extracted files form Debezium zip file.
+
+
 * connector-postgres.properties
 ```
 name=postgres-connector
