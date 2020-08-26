@@ -97,4 +97,6 @@ Hello, World! in Kafka using Python
 - https://kafka.apache.org/documentation.html#connect
 - https://debezium.io/releases/
 
+~/kafka/bin/connect-standalone.sh ~/sconf/connect-standalone.properties ~/conf/kafka-postgres.properties
+
 
