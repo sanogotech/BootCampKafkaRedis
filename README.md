@@ -1,4 +1,4 @@
-# BootCampKafkaRedis
+# TP 1: BootCampKafkaRedis
 
 ![Architecture API Spring Boot Kafka](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/DemoSpringBootAPIProducerKafkaConsumerSpringDB.jpg)
 
@@ -62,7 +62,7 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 
 - gradlew bootRun
 
-## Add Python  Hello Topic /Producer /Consumer
+# TP 2/ Add Python  Hello Topic /Producer /Consumer
 
 ```
 pip install kafka-python
@@ -92,3 +92,9 @@ producer.send('sample', key=b'message-two', value=b'This is Kafka-Python')
 ```
 Hello, World! in Kafka using Python
 ```
+
+# TP3 / Change  Data Capture  with  https://debezium.io/releases/
+- https://kafka.apache.org/documentation.html#connect
+- https://debezium.io/releases/
+
+
