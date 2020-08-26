@@ -62,3 +62,33 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 
 - gradlew bootRun
 
+## Add Python  Hello Topic /Producer /Consumer
+
+```
+pip install kafka-python
+```
+
+### Creating Kafka Topics  /myhellotopic
+
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic myhellotopic
+
+### Python Kafka Consumer  /myhellotopic
+
+```
+from kafka import KafkaConsumer
+consumer = KafkaConsumer('myhellotopic')
+for message in consumer:
+    print (message)
+```
+
+### Kafka Producer  /myhellotopic
+```
+from kafka import KafkaProducer
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
+producer.send('sample', b'Hello, World!')
+producer.send('sample', key=b'message-two', value=b'This is Kafka-Python')
+```
+### Result 
+```
+Hello, World! in Kafka using Python
+```
