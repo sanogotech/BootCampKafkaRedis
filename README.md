@@ -84,19 +84,55 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 -
 
 ### Python Kafka Consumer  /myhellotopic
 
+https://kafka-python.readthedocs.io/en/master/usage.html
+
 ```
+
 from kafka import KafkaConsumer
-consumer = KafkaConsumer('myhellotopic')
+
+
+# To consume latest messages and auto-commit offsets
+#consumer = KafkaConsumer('bootcamp-topic',   group_id='my-group',bootstrap_servers=['localhost:9093'])
+
+consumer = KafkaConsumer('bootcamp-topic',bootstrap_servers=['127.0.0.1:9093'])
+
 for message in consumer:
-    print (message)
+    # message value and key are raw bytes -- decode if necessary!
+    # e.g., for unicode: `message.value.decode('utf-8')`
+    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
+                                          message.offset, message.key,
+                                          message.value))
+
 ```
 
 ### Kafka Producer  /myhellotopic
 ```
 from kafka import KafkaProducer
-producer = KafkaProducer(bootstrap_servers='localhost:9092')
-producer.send('sample', b'Hello, World!')
-producer.send('sample', key=b'message-two', value=b'This is Kafka-Python')
+from kafka.errors import KafkaError
+
+producer = KafkaProducer(bootstrap_servers=['127.0.0.1:9093'])
+
+
+def on_send_success(record_metadata):
+    print(record_metadata.topic)
+    print(record_metadata.partition)
+    print(record_metadata.offset)
+
+def on_send_error(excp):
+    log.error('I am an errback', exc_info=excp)
+    # handle exception
+
+# produce asynchronously with callbacks
+producer.send('bootcamp-topic', b'Akwaba Python').add_callback(on_send_success).add_errback(on_send_error)
+
+# block until all async messages are sent
+producer.flush()
+
+# configure multiple retries
+#producer = KafkaProducer(retries=5)
+
+
+print('Send Message to Kafka')
 ```
 ### Result 
 ```
