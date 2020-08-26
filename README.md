@@ -99,4 +99,25 @@ Hello, World! in Kafka using Python
 
 ~/kafka/bin/connect-standalone.sh ~/sconf/connect-standalone.properties ~/conf/kafka-postgres.properties
 
+* connector-postgres.properties
+```
+name=postgres-connector
+connector.class=io.debezium.connector.postgresql.PostgresConnector
+database.hostname=xxx.xxx.xxx.xxx
+database.port=5432
+database.user=my_db_user
+database.password=my_db_password
+database.dbname=my_db_name
+database.server.name=db_logical_name
+plugin.name=pgoutput
+table.whitelist=my_schema.table_name
+errors.log.enable=true
+errors.logs.include.messages=true
+```
+* Some of the notable properties are
+
+connector.class – Defines which connector to be used.
+plugin.name – In With PostgreSQL 9.5 onwards you can leverage pgoutput instead of decoderbuf. If you are using older version of PostgreSQL, please refer to the Debezium documentation.
+table.whitelist – Defines the list of tables (comma separated) which should be observed for data changes.
+
 
