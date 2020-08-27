@@ -56,6 +56,8 @@ Now our Kafka is ready to use, we can monitor Kafka traffic using Kafka Tools th
 
 ![Client GUI KafkaTool](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/Kafkatool.jpg)
 
+Tools Open Source:  kafaka-manager  : https://github.com/yahoo/CMAK
+
 ## Creating a Producer 
 
 
