@@ -15,6 +15,8 @@ Valid Values:	[compact, delete]
 Importance:	medium
 Update Mode:	cluster-wide
 
+* cousumer  group-ip // le commit offset d'un membre du groupe impact les autres membres dans la lecture !
+
 ![Architecture API Spring Boot Kafka](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/DemoSpringBootAPIProducerKafkaConsumerSpringDB.jpg)
 
 ## Starting Zookeeper 
