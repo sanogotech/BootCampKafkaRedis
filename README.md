@@ -20,7 +20,7 @@ Update Mode:	cluster-wide
 ![Architecture API Spring Boot Kafka](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/DemoSpringBootAPIProducerKafkaConsumerSpringDB.jpg)
 
 ## Starting Zookeeper 
-./bin/zookeeper-server-start.sh config/zookeeper.properties &
+nohup ./bin/zookeeper-server-start.sh config/zookeeper.properties &
 
 NB: HD:  3 Machines 3 Zookeeper  et 3 Kafka / 1 par Machine
 
