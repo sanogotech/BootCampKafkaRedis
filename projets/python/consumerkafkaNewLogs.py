@@ -2,9 +2,13 @@ from kafka import KafkaConsumer
 
 
 # To consume latest messages and auto-commit offsets
-#consumer = KafkaConsumer('bootcamp-topic',   group_id='my-group',bootstrap_servers=['localhost:9093'])
+consumer = KafkaConsumer('my-topic',   group_id='my-group',bootstrap_servers=['127.0.0.1:9093'])
 
-consumer = KafkaConsumer('bootcamp-topic',bootstrap_servers=['127.0.0.1:9093'])
+# consume earliest available messages, don't commit offsets
+#consumer = KafkaConsumer('topic-2partition',bootstrap_servers=['127.0.0.1:9093'],auto_offset_reset='earliest',enable_auto_commit=False)
+
+
+
 
 for message in consumer:
     # message value and key are raw bytes -- decode if necessary!
@@ -12,3 +16,8 @@ for message in consumer:
     print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                           message.offset, message.key,
                                           message.value))
+
+
+    
+
+
