@@ -5,6 +5,8 @@
 ## Starting Zookeeper 
 ./bin/zookeeper-server-start.sh config/zookeeper.properties &
 
+NB: HD:  3 Machines 3 Zookeeper  et 3 Kafka / 1 par Machine
+
 ## Starting Brokers
 
 cp config/server.properties config/server1.properties 
