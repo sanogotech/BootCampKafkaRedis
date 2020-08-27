@@ -1,5 +1,20 @@
 # TP 1: BootCampKafkaRedis
 
+## Tuning
+* log.retention.hours=24
+* log.retention.bytes=1073741824
+
+log.cleanup.policy // delete ou compact  (garde le dernier)
+http://kafka.apache.org/documentation/
+log.cleanup.policy
+The default cleanup policy for segments beyond the retention window. A comma separated list of valid policies. Valid policies are: "delete" and "compact"
+
+Type:	list
+Default:	delete
+Valid Values:	[compact, delete]
+Importance:	medium
+Update Mode:	cluster-wide
+
 ![Architecture API Spring Boot Kafka](https://github.com/sanogotech/BootCampKafkaRedis/blob/master/doc/images/DemoSpringBootAPIProducerKafkaConsumerSpringDB.jpg)
 
 ## Starting Zookeeper 
