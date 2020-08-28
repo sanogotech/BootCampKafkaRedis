@@ -15,6 +15,14 @@
  */
 package org.springframework.samples.petclinic.owner;
 
+import java.util.Collection;
+import java.util.Map;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.samples.petclinic.visit.VisitRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,9 +34,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
-import java.util.Collection;
-import java.util.Map;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Juergen Hoeller
@@ -44,6 +50,13 @@ class OwnerController {
 	private final OwnerRepository owners;
 
 	private VisitRepository visits;
+	
+	
+	@Value("${kafka.my.topic}")
+    private String topic = "";
+	
+	 @Autowired
+	 private KafkaTemplate<String, String> kafkaStringTemplate;
 
 	public OwnerController(OwnerRepository clinicService, VisitRepository visits) {
 		this.owners = clinicService;
@@ -63,15 +76,26 @@ class OwnerController {
 	}
 
 	@PostMapping("/owners/new")
-	public String processCreationForm(@Valid Owner owner, BindingResult result) {
+	public String processCreationForm(@Valid Owner owner, BindingResult result) throws Exception {
 		if (result.hasErrors()) {
 			return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
 		}
 		else {
 			this.owners.save(owner);
+			publishKafka(owner);
 			return "redirect:/owners/" + owner.getId();
 		}
 	}
+	
+	/*
+	 * Kafka Producer
+	 */
+	private void publishKafka(Owner owner) throws Exception {
+		    ObjectMapper objectMapper = new ObjectMapper();
+		    String ownerAsString = objectMapper.writeValueAsString(owner);
+	    	kafkaStringTemplate.send(topic, "String",ownerAsString);
+	    	
+	    }
 
 	@GetMapping("/owners/find")
 	public String initFindForm(Map<String, Object> model) {
