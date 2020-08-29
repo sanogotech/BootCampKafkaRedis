@@ -5,7 +5,7 @@ from kafka import KafkaConsumer
 #consumer = KafkaConsumer('my-topic',   group_id='my-group',bootstrap_servers=['127.0.0.1:9093'])
 
 # consume earliest available messages, don't commit offsets
-consumer = KafkaConsumer('my-topic',bootstrap_servers=['127.0.0.1:9093','127.0.0.1:9094','127.0.0.1:9095'],auto_offset_reset='earliest',enable_auto_commit=False)
+consumer = KafkaConsumer('my-topic',bootstrap_servers=['127.0.0.1:9093'],auto_offset_reset='earliest',enable_auto_commit=False)
 
 
 
