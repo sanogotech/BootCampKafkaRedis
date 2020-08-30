@@ -4,6 +4,9 @@
 * log.retention.hours=24
 * log.retention.bytes=1073741824
 
+## Kafka  for Windows PATH
+* kafka_2.12-2.5.0\bin\windows\*.bat
+
 log.cleanup.policy // delete ou compact  (garde le dernier)
 http://kafka.apache.org/documentation/
 log.cleanup.policy
