@@ -4,8 +4,9 @@
 * log.retention.hours=24
 * log.retention.bytes=1073741824
 
-https://blog.ippon.fr/2020/06/26/kafka-dans-un-environnement-multi-datacenter/
-https://12factor.net/
+- https://blog.ippon.fr/2020/06/26/kafka-dans-un-environnement-multi-datacenter/
+- https://12factor.net/
+- https://blog.ippon.fr/2020/06/15/sonarqube-kill-the-bug-before-its-too-late/
 
 
 ## Kafka  for Windows PATH
