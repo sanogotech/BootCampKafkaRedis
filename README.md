@@ -32,6 +32,7 @@ A framework such as Spark Streaming reads data from a topic, processes it and wr
 * log.retention.hours=24
 * log.retention.bytes=1073741824
 
+- https://arrow.apache.org/
 - Cache : https://www.baeldung.com/apache-ignite-spring-data
 - https://blog.ippon.fr/sitemap-posts.xml
 - https://blog.ippon.fr/2020/06/26/kafka-dans-un-environnement-multi-datacenter/
