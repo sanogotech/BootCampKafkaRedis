@@ -3,7 +3,7 @@
 ## Use cases for a streaming platform
 Here are some generic scenarios for how you can leverage a streaming platform with the characteristics discussed above:
 
-- **Event-driven processing of big data sets ** (e.g., logs, IoT sensors, social feeds)
+- **Event-driven processing of big data sets** (e.g., logs, IoT sensors, social feeds)
 - Mission-critical, real-time applications (e.g., payments, fraud detection, customer experience)
 - **Decoupled integration between different legacy** applications and modern applicationS
 - **Microservices architecture**
