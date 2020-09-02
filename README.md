@@ -4,6 +4,9 @@
 * log.retention.hours=24
 * log.retention.bytes=1073741824
 
+https://blog.ippon.fr/2020/06/26/kafka-dans-un-environnement-multi-datacenter/
+
+
 ## Kafka  for Windows PATH
 * kafka_2.12-2.5.0\bin\windows\*.bat
 
