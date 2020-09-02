@@ -8,6 +8,23 @@ Here are some generic scenarios for how you can leverage a streaming platform wi
 - Decoupled integration between different legacy applications and modern applications
 - Microservices architecture
 - Analytics (e.g., for data science, machine learning)
+- Website activity tracking
+
+- Website activity:
+
+(page views, searches, or other actions users may take) is published to central topics and becomes available for real-time processing, dashboards and offline analytics in data warehouses like Google’s BigQuery.
+
+-Metrics :
+
+Kafka is often used for operation monitoring data pipelines and enables alerting and reporting on operational metrics. It aggregates statistics from distributed applications and produces centralized feeds of operational data.
+
+- Log aggregation :
+
+Kafka can be used across an organization to collect logs from multiple services and make them available in standard format to multiple consumers. It provides lower-latency processing and easier support for multiple data sources and distributed data consumption.
+
+- Stream processing :
+
+A framework such as Spark Streaming reads data from a topic, processes it and writes processed data to a new topic where it becomes available for users and applications. Kafka’s strong durability is also very useful in the context of stream processing.
 
 ## Tuning
 * log.retention.hours=24
