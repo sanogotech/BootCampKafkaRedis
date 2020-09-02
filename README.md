@@ -14,7 +14,7 @@ Here are some generic scenarios for how you can leverage a streaming platform wi
 
 (page views, searches, or other actions users may take) is published to central topics and becomes available for real-time processing, dashboards and offline analytics in data warehouses like Google’s BigQuery.
 
--Metrics :
+- Metrics :
 
 Kafka is often used for operation monitoring data pipelines and enables alerting and reporting on operational metrics. It aggregates statistics from distributed applications and produces centralized feeds of operational data.
 
