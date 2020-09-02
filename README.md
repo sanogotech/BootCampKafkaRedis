@@ -3,18 +3,16 @@
 ## Use cases for a streaming platform
 Here are some generic scenarios for how you can leverage a streaming platform with the characteristics discussed above:
 
-- Event-driven processing of big data sets (e.g., logs, IoT sensors, social feeds)
+- **Event-driven processing of big data sets ** (e.g., logs, IoT sensors, social feeds)
 - Mission-critical, real-time applications (e.g., payments, fraud detection, customer experience)
-- Decoupled integration between different legacy applications and modern applications
-- Microservices architecture
+- **Decoupled integration between different legacy** applications and modern applicationS
+- **Microservices architecture**
 - Analytics (e.g., for data science, machine learning)
 - Website activity tracking
 
-- Website activity:
-
 (page views, searches, or other actions users may take) is published to central topics and becomes available for real-time processing, dashboards and offline analytics in data warehouses like Google’s BigQuery.
 
-- Metrics :
+- **Metrics** :
 
 Kafka is often used for operation monitoring data pipelines and enables alerting and reporting on operational metrics. It aggregates statistics from distributed applications and produces centralized feeds of operational data.
 
@@ -22,7 +20,7 @@ Kafka is often used for operation monitoring data pipelines and enables alerting
 
 Kafka can be used across an organization to collect logs from multiple services and make them available in standard format to multiple consumers. It provides lower-latency processing and easier support for multiple data sources and distributed data consumption.
 
-- Stream processing :
+- **Stream processing** :
 
 A framework such as Spark Streaming reads data from a topic, processes it and writes processed data to a new topic where it becomes available for users and applications. Kafka’s strong durability is also very useful in the context of stream processing.
 
