@@ -6,6 +6,7 @@
 
 - https://blog.ippon.fr/sitemap-posts.xml
 - https://blog.ippon.fr/2020/06/26/kafka-dans-un-environnement-multi-datacenter/
+- https://blog.ippon.fr/2019/09/16/spark-explique-aux-decideurs/
 - https://12factor.net/
 - https://blog.ippon.fr/2020/06/15/sonarqube-kill-the-bug-before-its-too-late/
 
