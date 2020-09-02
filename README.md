@@ -33,6 +33,7 @@ A framework such as Spark Streaming reads data from a topic, processes it and wr
 * log.retention.bytes=1073741824
 
 - https://arrow.apache.org/
+- https://blog.ippon.fr/2020/02/17/apache-knox-api-gateway-hadoop/
 - https://blog.ippon.fr/2019/11/04/introduction-a-lelt-et-a-la-solution-matillion/
 - Cache : https://www.baeldung.com/apache-ignite-spring-data
 - https://blog.ippon.fr/sitemap-posts.xml
