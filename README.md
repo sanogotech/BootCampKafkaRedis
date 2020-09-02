@@ -25,6 +25,7 @@ Kafka can be used across an organization to collect logs from multiple services 
 A framework such as Spark Streaming reads data from a topic, processes it and writes processed data to a new topic where it becomes available for users and applications. Kafka’s strong durability is also very useful in the context of stream processing.
 
 - https://axual.com/apache-kafka-use-cases-in-real-life/
+- https://blog.ippon.fr/2019/11/18/confluent-schema-registry-un-premier-pas-vers-la-gouvernance-des-donnees/
 
 
 ## Tuning
