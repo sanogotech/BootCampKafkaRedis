@@ -37,6 +37,9 @@ L’utilisation de ces solutions est en revanche plus complexe que les outils ET
 ## Tuning
 * log.retention.hours=24
 * log.retention.bytes=1073741824
+
+- IOT :  https://streamsets.com/blog/ingesting-sensor-data-raspberry-pi-streamsets-data-collector/
+
 - https://apifriends.com/api-streaming/open-source-apache-big-data-projects/
 - https://cube.dev/blog/open-source-etl/  : Apache NiFi vs Streamsets
 - https://www.cartelis.com/blog/comparatif-logiciels-etl/ : 
