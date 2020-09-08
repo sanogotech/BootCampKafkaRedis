@@ -27,6 +27,12 @@ A framework such as Spark Streaming reads data from a topic, processes it and wr
 - https://axual.com/apache-kafka-use-cases-in-real-life/
 - https://blog.ippon.fr/2019/11/18/confluent-schema-registry-un-premier-pas-vers-la-gouvernance-des-donnees/
 
+## Les outils ETL open source
+
+
+Passons, pour finir, à la dernière catégorie : les logiciels ETL open source. Ils constituent une alternative intéressante aux solutions propriétaires – une alternative gratuite (attention toutefois à ne pas oublier les coûts de déploiement…). Leur développement est associé à celui des solutions de Business Intelligence open source (OSBI) : Pentaho, SpagoBI, JasperIntelligence…
+
+L’utilisation de ces solutions est en revanche plus complexe que les outils ETL Cloud et la connectivité est souvent moins développée, même si, open source oblige, libre à vous de développer des connecteurs spécifiques…Nous avons sélectionné 4 outils : Apache  Nifi, Streamsets (Datacollector) ,Apache AirFlow (Data workflow), Apache Kafka, Cloudera et Talend ETL.
 
 ## Tuning
 * log.retention.hours=24
