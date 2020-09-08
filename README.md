@@ -44,6 +44,7 @@ L’utilisation de ces solutions est en revanche plus complexe que les outils ET
 - https://blog.ippon.fr/2020/02/17/apache-knox-api-gateway-hadoop/
 - https://blog.ippon.fr/2019/11/04/introduction-a-lelt-et-a-la-solution-matillion/
 - Cache : https://www.baeldung.com/apache-ignite-spring-data
+- https://metamodel.apache.org/
 - https://blog.ippon.fr/sitemap-posts.xml
 - https://blog.ippon.fr/2020/06/26/kafka-dans-un-environnement-multi-datacenter/
 - https://blog.ippon.fr/2019/09/16/spark-explique-aux-decideurs/
